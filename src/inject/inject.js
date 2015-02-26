@@ -52,12 +52,13 @@ var TurboPlayer = TurboPlayer || {};
 TurboPlayer.loadTurboControls = function(el) {
   console.log("[Turbo] found audio", $(el));
   // add controls
-  var top = $(el).offset().top;
-  var left = $(el).offset().left;
-  var width = Math.max($(el).width(), 350);
+  var rect = $(el)[0].getBoundingClientRect();
+  var top   = rect.bottom + 2;
+  var left  = rect.left;
+
   $(el).wrap("<div class='turbo-audio'></div>");
   $(el).after(template);
-  $(el).parent().find(".turbo-audio-controls").css({top:top, left: left, width: width+"px"});
+  $(el).parent().find(".turbo-audio-controls").css({top:top, left: left});
 };
 
 var template = "\
