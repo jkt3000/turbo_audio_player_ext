@@ -1,3 +1,11 @@
 /**
  * Place your custom CSS styles here.
  **/
+
+.turbo-audio-controls {
+  padding:5px;
+  position:absolute;
+  display:block;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+}
