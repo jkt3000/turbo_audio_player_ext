@@ -2,8 +2,8 @@
   "name": "Turbo Audio Player",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension will add helpful playback buttons on any <audio> tag",
-  "homepage_url": "http://github.com/redronin/turbo-audio-player",
+  "description": "Adds playback buttons for <audio> tags",
+  "homepage_url": "https://github.com/redronin/turbo_audio_player",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -17,31 +17,19 @@
     "persistent": true
   },
   "options_page": "src/options/index.html",
-  "page_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "Turbo Audio Player Options",
-    "default_popup": "src/page_action/page_action.html"
-  },
   "permissions": [
     "https://*/*",
-    " http://*/*"
+    "http://*/*",
+    "activeTab"
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://www.google.com/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
+      "matches": ["*://*/*"],
+      "css": ["src/inject/inject.css"]
     },
     {
-      "matches": [
-        "https://www.google.com/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
+      "matches": ["*://*/*"],
+      "js": ["src/inject/inject.js"]
     }
   ]
 }

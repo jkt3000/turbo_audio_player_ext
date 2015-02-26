@@ -11,3 +11,18 @@ chrome.extension.sendMessage({}, function(response) {
 	}
 	}, 10);
 });
+
+
+console.log("[Turbo Audio Player] looking for <audio> tags");
+
+// look for audio tags
+// for each audio tag, insert controls
+
+
+// Checking page title
+    //Creating Elements
+    var btn = document.createElement("BUTTON");
+    var t = document.createTextNode("CLICK ME");
+    btn.appendChild(t);
+    //Appending to DOM
+    document.body.appendChild(btn);
