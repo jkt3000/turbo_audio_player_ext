@@ -16,7 +16,7 @@ console.log("[Turbo] Starting - waiting for document.ready");
 $(document).ready(function(){
   console.log("[Turbo] looking for <audio> tags");
   $('audio, video').each(function(e){
-    TurboPlayer.loadTurboControls(this);
+    TurboPlayer.loadTurboControls($(this));
   });
 
   $(".turbo-audio-btn").on('click', function(e){
@@ -50,27 +50,26 @@ $(document).ready(function(){
 
 var TurboPlayer = TurboPlayer || {};
 TurboPlayer.loadTurboControls = function(el) {
-  console.log("[Turbo] found audio", $(el));
   // add controls
-  var rect = $(el)[0].getBoundingClientRect();
+  var rect = el[0].getBoundingClientRect();
   var top   = rect.bottom + 2;
   var left  = rect.left;
 
-  $(el).wrap("<div class='turbo-audio'></div>");
-  $(el).after(template);
-  $(el).parent().find(".turbo-audio-controls").css({top:top, left: left});
+  el.wrap("<div class='turbo-audio'></div>");
+  el.after(template);
+  el.parent().find(".turbo-audio-controls").css({top:top, left: left});
 };
 
 var template = "\
 <div class='turbo-audio-controls'>\
-  <button class='turbo-audio-btn' data-action='rewind' data-value='-60'><<60</button>\
-  <button class='turbo-audio-btn' data-action='rewind' data-value='-30'><<30</button>\
-  <button class='turbo-audio-btn' data-action='play' data-value='1'>&#9658;</button>\
-  <button class='turbo-audio-btn' data-action='pause'>&#9616;&#9616;</button>\
-  <button class='turbo-audio-btn' data-action='play' data-value='2'>2x &#9658;</button>\
-  <button class='turbo-audio-btn' data-action='play' data-value='4'>4x &#9658;</button>\
-  <button class='turbo-audio-btn' data-action='forward' data-value='30'>>></button>\
-  <button class='turbo-audio-btn' data-action='forward' data-value='60'>>></button>\
+  <button class='turbo-audio-btn' data-action='rewind' data-value='-60'><< <small>60</small></button>\
+  <button class='turbo-audio-btn' data-action='rewind' data-value='-30'><< <small>30</small></button>\
+  <button class='turbo-audio-btn turbo-btn-primary' data-action='play' data-value='1'>&#9658;</button>\
+  <button class='turbo-audio-btn turbo-btn-danger' data-action='pause'>&#9616;&#9616;</button>\
+  <button class='turbo-audio-btn' data-action='play' data-value='2'><small>2x</small>&#9658;</button>\
+  <button class='turbo-audio-btn' data-action='play' data-value='4'><small>4x</small>&#9658;</button>\
+  <button class='turbo-audio-btn' data-action='forward' data-value='30'><small>30</small> >></button>\
+  <button class='turbo-audio-btn' data-action='forward' data-value='60'><small>60</small> >></button>\
 </div>\
 ";
 
