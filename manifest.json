@@ -29,7 +29,7 @@
     },
     {
       "matches": ["*://*/*"],
-      "js": ["js/jquery/jquery.min.js", "src/inject/inject.js"]
+      "js": ["src/inject/domready.js", "src/inject/inject.js"]
     }
   ]
 }
