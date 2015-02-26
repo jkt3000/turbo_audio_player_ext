@@ -4,14 +4,17 @@ This chrome extension will add some helpful playback buttons that will speed up 
 
 Adds the following audio control buttons:
 
-<<60 - rewinds 60 seconds
-<<30 - rewinds 30 seconds
->    - normal play
-||   - pause
-2x > - play audio at 2x speed
-4x > - play audio at 4x speed
-30>> - fast forward 30 seconds
-60>> - fast forward 60 seconds
+
+* <<60 - rewinds 60 seconds
+* <<30 - rewinds 30 seconds
+* >    - normal play
+* ||   - pause
+* 2x > - play audio at 2x speed
+* 4x > - play audio at 4x speed
+* 30>> - fast forward 30 seconds
+* 60>> - fast forward 60 seconds
+
+
 
 ### Installation
 
