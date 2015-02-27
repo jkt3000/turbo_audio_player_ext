@@ -22,3 +22,6 @@ Adds the following audio control buttons:
 2. Go to Chrome extension manager
 3. Click 'load unpacked extension...' and select the repo directory
 4. Visit any page with a html audio file tag, and you should see additional audio control buttons. Try it on a page like http://demos.w3avenue.com/html5-unleashed-tips-tricks-and-techniques/sample-04-audio-demo.html
+
+
+This project was created during Shopify Hackdays, Feb 2015
