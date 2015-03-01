@@ -1,6 +1,6 @@
 {
   "name": "Turbo Audio Player",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Adds playback buttons for <audio> tags",
   "homepage_url": "https://github.com/redronin/turbo_audio_player",
