@@ -93,17 +93,27 @@ TP.buttonListener = function(e) {
 
 
 onDomReady(function(){
-  console.log("[Turbo] Starting - waiting for document.ready");
-  ['audio', 'video'].forEach(function(tag){
-    var els = document.getElementsByTagName(tag);
-    for (var i = 0; i < els.length; i++) {
-      var audioEl = els[i];
-      console.log("Found ", tag, audioEl);
-      TP.loadTurboControls(audioEl);
-    };
-  });
 
-  // add listeners
+  // check for audio tags
+  console.log("[Turbo] Looking for audio tags");
+  var els = document.getElementsByTagName('audio');
+  for (var i = 0; i < els.length; i++) {
+    var audioEl = els[i];
+    console.log("Found ", audioEl);
+    // if
+    TP.loadTurboControls(audioEl);
+  };
+
+  // check for video but only with class = 'media'
+  console.log("[Turbo] Looking for video.media tags");
+  var els = document.getElementsByTagName('video');
+  for (var i = 0; i < els.length; i++) {
+    var audioEl = els[i];
+    if (audioEl.getAttribute('name') !== 'media') { return; }
+    console.log("Found ", audioEl);
+    TP.loadTurboControls(audioEl);
+  };
+
 
 })
 

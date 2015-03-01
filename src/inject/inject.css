@@ -19,6 +19,8 @@
   -ms-user-select: none;
   user-select: none;
   background-image: none;
+  background-color: #333;
+  color: #FFF;
   border: 1px solid transparent;
   border-radius: 4px;
   margin: 1px 1px !important;
@@ -44,4 +46,6 @@
   z-index: 9999;
   font-size: 14px;
   width: 450px;
+  height:80px;
+  overflow:hidden;
 }
